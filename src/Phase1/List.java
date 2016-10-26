@@ -77,8 +77,18 @@ public class List {
 	}
 	
 	public void printLinkedListTail(){
-		
-		
+		ListElement printElement = new ListElement();
+
+		for(int j=n;j>1;j--){
+			printElement = head;
+		for(int i=1;i<n;i++){
+			printElement = printElement.next;
+			if(i==j-1){
+			System.out.println(printElement);
+			}
+		}
+		}
+		System.out.println(head); //not printed inside print loops
 	}
 	
 	public void printLinkedListHead(){
@@ -88,7 +98,7 @@ public class List {
 			System.out.println(printElement);
 			printElement = printElement.next;
 		}
-		System.out.println(printElement); //prints elements which is not printed in the list
+		System.out.println(printElement); //prints tail elements which is not printed in the loop
 		
 	}
 	

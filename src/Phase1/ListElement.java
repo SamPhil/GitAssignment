@@ -12,6 +12,13 @@ public class ListElement {
 	this.previous = null;
 	}
 	
+	public ListElement(int data)
+	{
+	this.data = data;
+	this.next = null;
+	this.previous = null;
+	}
+	
 	/**
 	* @param data
 	* an i n t e g e r to be s t o r ed in the node
