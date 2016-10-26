@@ -11,7 +11,8 @@ public class List {
 			head = le;
 		}
 		else {
-			tail.next=le;
+			tail.next = le;
+			tail.previous = tail;
 		}
 		tail=le;
 		tail.next=null; //nothing is next of tail 
@@ -80,19 +81,16 @@ public class List {
 	}
 	
 	public void printLinkedListTail(){
-		ListElement printElement = new ListElement();
 
-		for(int j=n;j>1;j--){
-			printElement = head;
-		for(int i=1;i<n;i++){
-			printElement = printElement.next;
-			if(i==j-1){
-			
+		ListElement printElement = new ListElement();
+		printElement = tail;
+		for(int i=n;i>1;i--){
 			System.out.println("index: " + i + " Data: " + printElement.getData());
-			}
+			printElement = printElement.previous;
 		}
-		}
-		System.out.println("head: index: 1 Data: " + head.getData()); //not printed inside print loops
+		System.out.println("Head: index: 1 Data: " +  printElement.getData()); //prints tail elements which is not printed in the loop
+		
+		
 	}
 	
 	public void printLinkedListHead(){
