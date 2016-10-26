@@ -27,9 +27,12 @@ public class UserInterface {
 			//Determine input value
 			System.out.println("Please enter value to be added: ");	
 			int input = in.nextInt();
-			ListElement addElm = null;
-			addElm.setData(input);
+			ListElement addElm = new ListElement(input);
+			//addElm.setData(input);
 			SingleLL.addElement(addElm);
+			if(input==addElm.getData()){
+				System.out.println("Value added successfully.");	
+			}
 		}
 		
 		else if(operation.equals("Del")){
@@ -37,8 +40,8 @@ public class UserInterface {
 			//Determine index value
 			System.out.println("Please enter index value: ");	
 			int index = in.nextInt();
-			System.out.println("The list element deleted at this index was:");	
-			System.out.println(SingleLL.deleteElement(index));				
+			System.out.println("The list element data deleted at this index was:");	
+			System.out.println(SingleLL.deleteElement(index).getData());				
 			
 		}
 		else if(operation.equals("Get")){
@@ -46,17 +49,21 @@ public class UserInterface {
 			//Determine index value
 			System.out.println("Please enter index value: ");	
 			int index = in.nextInt();
-			System.out.println("The list element at this index is:");	
-			System.out.println(SingleLL.getElement(index));		
+			System.out.println("The list element data at this index is:");	
+			System.out.println(SingleLL.getElement(index).getData());		
 						
 		}
 		else if(operation.equals("ListHead")){
 			System.out.println("The current List begining with the head is: ");
 			SingleLL.printLinkedListHead();
+			System.out.println("Please enter either 'Add', 'Del','ListHead' or 'ListTail' or 'Get' to enter into the respective mode.");
+			System.out.println("Altenatively you may enter 'END' if you wish to terminate the progam.");	
 		}
 		else if(operation.equals("ListTail")){
 			System.out.println("The current List begining with the tail is: ");
 			SingleLL.printLinkedListTail();
+			System.out.println("Please enter either 'Add', 'Del','ListHead' or 'ListTail' or 'Get' to enter into the respective mode.");
+			System.out.println("Altenatively you may enter 'END' if you wish to terminate the progam.");	
 		}
 		else if(operation.equals("END")){
 			System.out.println("System will now terminate. Thank you for using SingleLinkedList database.");

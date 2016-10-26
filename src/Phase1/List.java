@@ -49,6 +49,7 @@ public class List {
 		}
 		else if (index==1){
 			head.next = head;	//head is no longer in list
+			n--;
 			return head;
 		}
 		else if (index==n){
@@ -59,6 +60,7 @@ public class List {
 			}
 			returnElement = tail; 		//tail is no longer in list
 			returnElement.next = null;
+			n--;
 			return returnElement;
 		}
 		else if (index>n){
@@ -71,6 +73,7 @@ public class List {
 				returnElement = returnElement.next;
 			}
 			returnElement.next = returnElement.next.next;		//listelement is now 'jumped' over in list, it no longer exists
+			n--;
 			return returnElement;
 		}
 		
@@ -84,21 +87,22 @@ public class List {
 		for(int i=1;i<n;i++){
 			printElement = printElement.next;
 			if(i==j-1){
-			System.out.println(printElement);
+			
+			System.out.println("index: " + i + " Data: " + printElement.getData());
 			}
 		}
 		}
-		System.out.println(head); //not printed inside print loops
+		System.out.println("head: index: 1 Data: " + head.getData()); //not printed inside print loops
 	}
 	
 	public void printLinkedListHead(){
 		ListElement printElement = new ListElement();
 		printElement = head;
 		for(int i=1;i<n;i++){
-			System.out.println(printElement);
+			System.out.println("index: " + i + " Data: " + printElement.getData());
 			printElement = printElement.next;
 		}
-		System.out.println(printElement); //prints tail elements which is not printed in the loop
+		System.out.println("tail: index: " + n + " Data: " +  printElement.getData()); //prints tail elements which is not printed in the loop
 		
 	}
 	
