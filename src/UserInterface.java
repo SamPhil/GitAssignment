@@ -10,7 +10,7 @@ public class UserInterface {
 
 		
 	Scanner in = new Scanner(System.in);
-	System.out.println("Welcome to the SLL database. Five methods of operation are available: 'Add', 'Del', 'ListHead'");	
+	System.out.println("Welcome to the DLL database. Five methods of operation are available: 'Add', 'Del', 'ListHead'");	
 	System.out.println("'ListTail' and 'Get'.");	
 	System.out.println("They are used to enter an element, delete an element, list the element starting with the head");
 	System.out.println("list the element starting with the tail or get an individual element");

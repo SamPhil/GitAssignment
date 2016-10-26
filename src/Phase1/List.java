@@ -12,7 +12,7 @@ public class List {
 		}
 		else {
 			tail.next = le;
-			tail.previous = tail;
+			le.previous = tail;
 		}
 		tail=le;
 		tail.next=null; //nothing is next of tail 
@@ -55,10 +55,8 @@ public class List {
 		}
 		else if (index==n){
 			ListElement returnElement = new ListElement();
-			returnElement = head;
-			for(int i=1;i<index-1;i++){
-				returnElement = returnElement.next;
-			}
+			returnElement = tail.previous;
+
 			returnElement = tail; 		//tail is no longer in list
 			returnElement.next = null;
 			n--;
